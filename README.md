@@ -1,0 +1,215 @@
+# Core Java
+1. Explain the concept of multithreading in Java. What are the advantages and disadvantages of using threads?
+2. Discuss the differences between `synchronized` methods and `synchronized` blocks in Java.
+3. What is the purpose of the `volatile` keyword in Java? How does it affect variable visibility and thread synchronization?
+4. Explain the concept of Java memory model and the role of the Java Virtual Machine (JVM) in managing memory.
+5. Discuss the differences between `String`, `StringBuffer`, and `StringBuilder` classes in Java. When would you choose one over the other?
+6. What is the purpose of the `transient` keyword in Java? How does it affect the serialization process?
+7. Explain the concept of exception handling in Java. What are checked and unchecked exceptions? How do you handle exceptions effectively?
+8. Describe the differences between shallow copy and deep copy in Java. How do you achieve deep copy for complex objects?
+9. Discuss the differences between `==` and `equals()` methods in Java. How do you properly implement the `equals()` method for custom classes?
+10. What are the different types of inner classes in Java? Explain their purposes and usage scenarios.
+11. Discuss the concept of reflection in Java. How do you use reflection to inspect and modify class behavior at runtime?
+12. Explain the principles of object serialization and deserialization in Java. What are the considerations for ensuring compatibility during serialization?
+13. Discuss the differences between abstract classes and interfaces in Java. When would you use each of them?
+14. Explain the concept of generics in Java. What are the benefits of using generics and how do you use them in your code?
+15. Describe the concept of annotations in Java. How do you create and use custom annotations in your code?
+
+# String
+1. Explain the difference between the `String`, `StringBuilder`, and `StringBuffer` classes in Java. When would you use each of them?
+2. How does Java handle string immutability? What are the benefits and drawbacks of having immutable strings?
+3. Explain the concept of string interning in Java. How does it work and what is its purpose?
+4. Discuss the differences between the `==` operator and the `equals()` method when comparing strings in Java.
+5. What is the purpose of the `StringPool` in Java? How does it affect memory usage and string interning?
+6. Explain the difference between `String`, `StringBuffer`, and `StringBuilder` in terms of thread-safety.
+7. Discuss the performance implications of string concatenation using the `+` operator versus `StringBuilder` or `StringBuffer`.
+8. Explain the concept of substring in Java. How do you extract a substring from a given string?
+9. What are some common methods available in the `String` class? Explain the usage of methods such as `charAt()`, `length()`, `substring()`, and `toLowerCase()`.
+10. Discuss the differences between the `split()` method and regular expressions for splitting strings in Java.
+11. How do you compare strings in a case-insensitive manner in Java?
+12. Explain the concept of string formatting in Java. How do you use the `String.format()` method to format strings?
+13. Discuss the differences between the `compareTo()`, `compareToIgnoreCase()`, and `equals()` methods for string comparison in Java.
+14. Explain the purpose and usage of the `trim()` method in Java. How does it remove leading and trailing whitespace from a string?
+15. How do you convert a string to uppercase or lowercase in Java? Discuss the usage of `toUpperCase()` and `toLowerCase()` methods.
+
+# Java Memory Model
+1. What is the Java Memory Model (JMM)? Explain its purpose and significance in multi-threaded programming.
+2. What is the difference between the stack and the heap in the Java memory model? How are they used for storing different types of data?
+3. What are the main memory areas in the Java Virtual Machine (JVM) and how do they relate to the Java Memory Model?
+4. Explain the concept of thread-local memory and its significance in the Java Memory Model.
+5. What is the happens-before relationship in the Java Memory Model? How does it ensure proper synchronization and ordering of memory operations between threads?
+6. Discuss the role of volatile variables in the Java Memory Model. How do they affect visibility and ordering of memory accesses?
+7. Explain the purpose and usage of the `synchronized` keyword in Java. How does it provide thread safety and enforce mutual exclusion?
+8. What are atomic operations in Java? How do they ensure atomicity and avoid data races in multi-threaded environments?
+9. Discuss the concept of memory barriers in the Java Memory Model. How do they affect the reordering of memory operations and ensure proper synchronization?
+10. Explain the differences between the `volatile` keyword and the `synchronized` keyword in Java. When should you use each of them?
+11. What are the advantages and disadvantages of using immutable objects in multi-threaded programming?
+12. How does Java handle memory visibility across threads? Explain the concept of caching and the use of memory fences to ensure visibility.
+13. What are the potential issues related to concurrent access to shared mutable objects? Discuss problems such as race conditions, deadlocks, and livelocks.
+14. Explain the concept of happens-before ordering in Java. How does it impact the visibility and ordering of memory operations in concurrent programming?
+15. How do you ensure thread safety in Java applications? Discuss different synchronization mechanisms and techniques available in Java.
+
+# JDBC
+1. What is JDBC? Explain its purpose and role in Java database programming.
+2. What are the different components of JDBC architecture?
+3. Explain the steps involved in establishing a database connection using JDBC.
+4. What is a JDBC driver? Discuss the different types of JDBC drivers available.
+5. How do you load and register a JDBC driver in a Java application?
+6. What are the main interfaces provided by the JDBC API?
+7. Explain the difference between Statement and PreparedStatement in JDBC. When would you use each of them?
+8. What is the purpose of ResultSet in JDBC? How do you retrieve and process data from a ResultSet?
+9. Discuss the different types of ResultSet concurrency and ResultSet holdability in JDBC.
+10. Explain the concept of JDBC transactions. How do you manage transactions using the Connection object?
+11. What is connection pooling in JDBC? How does it improve performance in database applications?
+12. How do you handle exceptions and errors in JDBC programming?
+13. Discuss the use of batch processing in JDBC. What are the advantages and disadvantages of using batch updates?
+14. What are the best practices for writing efficient and scalable JDBC code?
+15. How do you handle large result sets and perform pagination in JDBC?
+
+
+# Collection Framework:
+1. What is the difference between `ArrayList` and `LinkedList` in Java? When would you choose one over the other?
+2. Explain the concept of fail-fast and fail-safe iterators in Java. Provide examples of each.
+3. What is the purpose of the `Comparable` and `Comparator` interfaces in Java? How are they different?
+4. Explain the differences between `HashSet` and `TreeSet` in Java. When would you choose one over the other?
+5. Describe the role of the `hashCode()` and `equals()` methods in the `Object` class and how they relate to collections.
+6. What are the differences between `HashMap` and `Hashtable` in Java? Which one is thread-safe?
+7. Explain the concept of a concurrent collection in Java. Give examples of concurrent collection classes and their usage.
+8. What is the purpose of the `java.util.Collections` class in Java? Provide examples of useful methods from this class.
+9. Describe the difference between the `List` and `Set` interfaces in Java. Provide examples of classes that implement each interface.
+10. Explain the concept of immutability in Java collections. Provide examples of immutable collection classes.
+11. What is the purpose of the `java.util.Queue` interface? Give examples of classes that implement this interface.
+12. Describe the characteristics and use cases of the `java.util.Deque` interface in Java.
+13. Explain the concept of a synchronized collection in Java. How can you make a collection thread-safe?
+14. What is the purpose of the `NavigableMap` and `NavigableSet` interfaces in Java? Give examples of classes that implement these interfaces.
+15. Describe the purpose and usage of the `java.util.EnumSet` and `java.util.EnumMap` classes.
+
+# Multithreading
+1. What is multithreading? How does it differ from traditional single-threaded programming?
+2. What are the advantages of using multithreading in Java?
+3. Explain the lifecycle of a thread in Java.
+4. How do you create and start a thread in Java? Discuss the different ways to achieve this.
+5. What is the difference between implementing the Runnable interface and extending the Thread class to create a thread?
+6. Explain the concept of thread synchronization. Why is it important in multithreaded programming?
+7. What are the synchronization mechanisms provided by Java for thread safety?
+8. What is the purpose of the wait(), notify(), and notifyAll() methods in Java threading?
+9. Discuss the concept of thread pooling and the benefits it provides.
+10. What are the challenges and considerations in writing thread-safe code?
+11. Explain the concepts of deadlock, livelock, and starvation in multithreading.
+12. How do you handle exceptions and errors in multithreaded applications?
+13. Discuss the different thread scheduling algorithms used by Java.
+14. What is the ThreadLocal class in Java? Explain its usage and benefits.
+15. How do you handle shared resources and avoid race conditions in multithreaded programming?
+
+# Test framework
+1. What is a testing framework, and why is it important in software development?
+2. What are the key features to consider when choosing a testing framework for your project?
+3. Compare and contrast unit testing and integration testing.
+4. What are some popular testing frameworks available for Java?
+5. Explain the concept of test-driven development (TDD) and its relationship with testing frameworks.
+6. What are the benefits of using a testing framework in your project?
+7. Discuss the different types of assertions and test annotations commonly used in testing frameworks.
+8. How can you integrate a testing framework into your build process or continuous integration/continuous delivery (CI/CD) pipeline?
+9. Explain the concept of mocking and how it is used in testing frameworks.
+10. What are some best practices for writing effective and maintainable tests using a testing framework?
+
+# SQL queries
+1. Write a SQL query to find the second highest salary from an Employee table.
+2. Write a SQL query to find the nth highest salary from an Employee table.
+3. Write a SQL query to find the employees who have duplicate entries in a table.
+4. Write a SQL query to find the top 5 customers with the highest total order amounts.
+5. Write a SQL query to find the names of customers who have placed orders for all products.
+6. Write a SQL query to calculate the running total for a specific column in a table.
+7. Write a SQL query to find the longest consecutive sequence of numbers in a table.
+8. Write a SQL query to find the customers who have made the most recent purchase in each category.
+9. Write a SQL query to find the average rating of products based on customer reviews.
+10. Write a SQL query to find the customers who have not placed any orders.
+11. Write a SQL query to retrieve the employees who have a higher salary than their respective managers.
+12. Write a SQL query to find the employees who do not have a manager.
+13. Write a SQL query to find the employees who have at least one subordinate.
+14. Write a SQL query to calculate the average salary of employees reporting to each manager.
+15. Write a SQL query to find the manager(s) who have the highest number of subordinates.
+16. Write a SQL query to find the manager(s) whose subordinates have the highest average salary.
+17. Write a SQL query to find the manager(s) who have at least one subordinate with a salary greater than a certain threshold.
+18. Write a SQL query to retrieve the employees and their managers in a hierarchical order.
+19. Write a SQL query to find the employee(s) who are directly or indirectly managed by a specific manager.
+20. Write a SQL query to calculate the total salary cost for each manager, including their subordinates.
+
+# Spring Boot
+
+
+1. What is Spring Boot? How does it differ from the traditional Spring Framework?
+2. What are the advantages of using Spring Boot for application development?
+3. Explain the concept of "convention over configuration" in Spring Boot.
+4. How does Spring Boot simplify the configuration of Spring applications?
+5. What is the role of the `@SpringBootApplication` annotation in a Spring Boot application?
+6. How does Spring Boot handle application dependencies and manage the project's classpath?
+7. Explain the concept of "auto-configuration" in Spring Boot.
+8. How can you customize the default behavior of Spring Boot auto-configuration?
+9. What is the purpose of the `application.properties` (or `application.yml`) file in a Spring Boot application?
+10. How does Spring Boot support the creation of RESTful web services?
+11. Explain the role of Spring Boot starters in managing application dependencies.
+12. How can you externalize configuration in a Spring Boot application?
+13. What is the difference between Spring Boot's embedded servlet container and an external servlet container?
+14. How can you deploy a Spring Boot application to a production environment?
+15. Explain the concept of "Actuator" in Spring Boot and its significance for monitoring and managing applications.
+
+# Advance Spring Boot
+1. What is the purpose of the `@RestController` annotation in Spring Boot? How is it different from `@Controller`?
+2. Explain the concept of dependency injection in the context of Spring Boot.
+3. How does Spring Boot support database connectivity? Explain the role of Spring Data JPA.
+4. What is the difference between Spring Boot's `@Component`, `@Service`, and `@Repository` annotations? When and how are they used?
+5. How can you implement authentication and authorization in a Spring Boot application?
+6. Explain the concept of AOP (Aspect-Oriented Programming) in Spring Boot. How is it used to implement cross-cutting concerns?
+7. What are Spring Boot profiles? How can you use them to configure different environments (e.g., development, production)?
+8. How does Spring Boot handle logging? Which logging frameworks are supported?
+9. Explain the concept of Spring Boot Actuator endpoints. How can you customize and secure Actuator endpoints?
+10. How can you enable caching in a Spring Boot application? What caching mechanisms does Spring Boot support?
+11. How does Spring Boot support messaging systems? Explain the role of Spring Integration and Spring AMQP.
+12. What is Spring Boot DevTools? What are its features and benefits?
+13. How can you schedule tasks or jobs in a Spring Boot application?
+14. Explain the concept of Spring Boot starters. How can you create and use custom starters?
+15. How can you handle exceptions and error conditions in a Spring Boot application?
+
+# Spring MVC
+
+1. What is Spring MVC? How does it differ from the core Spring framework?
+2. Explain the key components of the Spring MVC architecture.
+3. How does the DispatcherServlet handle incoming requests in Spring MVC?
+4. What is the role of the @Controller annotation in Spring MVC? How is it used?
+5. Explain the lifecycle of a Spring MVC request.
+6. What is the purpose of the Model, View, and Controller in the Spring MVC pattern?
+7. How can you handle form submissions in Spring MVC? Explain the usage of @ModelAttribute and @RequestParam annotations.
+8. What is the purpose of the @RequestMapping annotation? How can you use it to map requests to controller methods?
+9. How can you perform data validation in Spring MVC? Explain the usage of @Valid and BindingResult.
+10. What is the concept of view resolution in Spring MVC? How can you configure view resolvers?
+11. Explain the usage of the @PathVariable annotation in Spring MVC.
+12. How can you handle exceptions and errors in Spring MVC? Explain the usage of @ExceptionHandler.
+13. What is the purpose of the RedirectAttributes class in Spring MVC? How can you use it for redirecting and flash attributes?
+14. How can you handle file uploads in Spring MVC? Explain the usage of the MultipartFile interface.
+15. What is the purpose of the ModelAndView class in Spring MVC? How can you use it to pass data to views?
+16. What is the purpose of the @ResponseBody annotation in Spring MVC? How is it used?
+17. Explain the concept of Spring MVC interceptors. How can you define and use interceptors in your application?
+18. What is the difference between @RequestParam and @PathVariable annotations in Spring MVC? When would you use each one?
+19. How can you handle file downloads in Spring MVC? Explain the usage of the ResponseEntity class.
+20. What is the purpose of the @ModelAttribute annotation in Spring MVC? How can you use it to bind form data to model attributes?
+21. Explain the usage of the @RequestBody annotation in Spring MVC. How can you handle incoming JSON or XML requests?
+22. How can you implement internationalization (i18n) and localization (l10n) in Spring MVC? Explain the usage of the ResourceBundleMessageSource class.
+23. What is the purpose of the Spring MVC Test framework? How can you write unit tests for your Spring MVC controllers?
+24. Explain the concept of RESTful web services in Spring MVC. How can you build RESTful APIs using Spring MVC?
+25. What is the purpose of the @RestController annotation in Spring MVC? How is it different from the @Controller annotation?
+
+# Spring framework
+1. What is the Spring framework, and what are its core features and benefits?
+2. Explain the concept of inversion of control (IoC) and dependency injection (DI) in the Spring framework.
+3. What is the difference between Spring Core and Spring Boot?
+4. What are the different modules or components in the Spring framework, and briefly explain their purpose (e.g., Spring MVC, Spring Data, Spring Security).
+5. How does Spring support aspect-oriented programming (AOP)? Explain the concept of aspect, advice, joinpoint, and pointcut in the context of Spring AOP.
+6. What is the purpose of the Spring container, and what are its two implementations (BeanFactory and ApplicationContext)?
+7. Explain the lifecycle of a Spring bean, including the initialization and destruction phases.
+8. How can you configure beans in Spring? Explain the different approaches (XML-based configuration, annotation-based configuration, Java-based configuration).
+9. What is the purpose of the Spring framework's transaction management? Explain the different transaction management strategies supported by Spring.
+10. How can you integrate Spring with other technologies or frameworks, such as Hibernate, JPA, and JDBC?
+
+
+
