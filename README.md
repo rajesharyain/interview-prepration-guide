@@ -15,6 +15,85 @@
 14. Explain the concept of generics in Java. What are the benefits of using generics and how do you use them in your code?
 15. Describe the concept of annotations in Java. How do you create and use custom annotations in your code?
 
+# Advance Core Java
+Here are some tricky interview questions on Java for advanced-level experience:
+
+1. What is the difference between checked and unchecked exceptions in Java? Can you give examples of each?
+2. Explain the concept of immutability in Java. Why is it important? Provide examples of immutable and mutable classes.
+3. What are functional interfaces in Java 8? Can you give examples of built-in functional interfaces and demonstrate their usage?
+4. Describe the differences between the `synchronized` keyword and the `java.util.concurrent` package in Java. When would you choose one over the other for thread safety?
+5. Explain the concept of Java Memory Model (JMM) and its importance in multi-threading. What are the guarantees provided by JMM?
+6. Discuss the pros and cons of using inheritance versus composition in Java. When would you prefer one approach over the other?
+7. What is the purpose of the `volatile` keyword in Java? How does it differ from using `synchronized`?
+8. What are the benefits and drawbacks of using Java's Stream API? Provide an example of how you would use Streams to perform a complex data manipulation.
+9. Explain the difference between the `equals()` and `hashCode()` methods in Java. Why is it important to override both methods together?
+10. Discuss the differences between `StringBuilder` and `StringBuffer` classes in Java. When would you choose one over the other for string manipulation?
+11. What are the advantages and disadvantages of using Java's Reflection API? Can you provide a scenario where reflection would be useful?
+12. Describe the concept of dependency injection (DI) and inversion of control (IoC) in Java. How would you implement DI using frameworks like Spring?
+13. Explain the concept of classloading in Java. How does the JVM load and resolve classes? What are the different types of classloaders?
+14. Discuss the usage of annotations in Java. Provide examples of built-in annotations and demonstrate how custom annotations can be created and used.
+15. Explain the concept of Java Native Interface (JNI). When and why would you use JNI to interact with native code?
+16. What is the purpose of the `transient` keyword in Java? How does it affect serialization and deserialization?
+17. Explain the concept of lambda expressions in Java 8. How do they enable functional programming and simplify coding?
+18. Discuss the differences between the `compareTo()`, `equals()`, and `hashCode()` methods in Java. How do they relate to each other?
+19. Describe the principles of Object-Oriented Design (OOD) and SOLID principles in Java. How do they promote maintainability and extensibility of code?
+20. Explain the concept of Java Generics and how they provide type safety and code reusability. Demonstrate the usage of bounded type parameters and wildcards.
+21. What are Java annotations and how can they be used for compile-time and runtime processing? Provide examples of custom annotations and how they can be processed.
+22. Describe the concept of concurrency in Java. What are the differences between the `wait()`, `notify()`, and `notifyAll()` methods? How can you avoid common concurrency pitfalls?
+23. Discuss the benefits and drawbacks of using Java's Executor Framework for managing thread execution. How does it differ from directly using `Thread` objects?
+24. Explain the concept of garbage collection in Java. What are the different types of garbage collectors available in the JVM? How can you optimize memory management?
+25. Describe the concept of Java Reflection and its use cases. How can you inspect and manipulate class structures, fields, and methods at runtime using reflection?
+26. Discuss the usage of Java's Annotation Processing Tool (APT) for code generation and compile-time validation. Provide an example of generating code using APT.
+27. Explain the concept of Java's Module System (Project Jigsaw). How does it enhance modularity and encapsulation in large-scale applications?
+28. Discuss the differences between shallow copy and deep copy in Java. How can you implement these copying mechanisms for objects?
+29. What are the design patterns commonly used in Java? Explain the Singleton, Factory, and Observer patterns and provide examples of their implementation.
+30. Describe the principles of Test-Driven Development (TDD) and how it can improve the quality and maintainability of Java code. Provide an example of writing a test-first approach.
+31. Explain the concept of Java Memory Leaks. What causes memory leaks in Java and how can they be detected and prevented?
+32. Discuss the differences between the `final`, `finally`, and `finalize` keywords in Java. What are their respective purposes and how are they used?
+33. Describe the concept of functional programming in Java. How does Java 8 support functional programming with lambda expressions and functional interfaces?
+34. Explain the concept of Java Serialization. How does it work, and what considerations should be taken into account when implementing Serializable classes?
+35. Discuss the differences between shallow cloning and deep cloning in Java. What are the different approaches to achieve deep cloning?
+36. What are the different types of references in Java, such as strong, weak, soft, and phantom references? How are they used, and what are their implications?
+37. Describe the concept of method references in Java 8. How do they provide a concise way to refer to methods or constructors?
+38. Discuss the differences between abstract classes and interfaces in Java. When would you choose to use one over the other?
+39. Explain the concept of Java's volatile keyword and its role in multi-threading. How does it ensure visibility and ordering of shared variables?
+40. Discuss the Java Memory Model (JMM) and its impact on multi-threading. How can you ensure thread safety and avoid data races using synchronization?
+41. Describe the concept of lazy initialization in Java. How can you implement lazy initialization for objects to improve performance?
+42. Explain the concept of annotations processors in Java. How can you write a custom annotation processor to perform compile-time code generation or validation?
+43. Discuss the differences between overloading and overriding in Java. What are the rules and considerations when implementing overloaded or overridden methods?
+44. Describe the concept of parallel programming in Java. How can you leverage parallel streams or the Fork/Join framework to achieve parallelism?
+45. Explain the concept of functional interfaces in Java and how they are related to lambda expressions. How can you create your own functional interface?
+46. Discuss the concept of the Java Virtual Machine (JVM). How does it enable platform independence and execute Java bytecode?
+47. Explain the concept of the String pool in Java. How does it work and what are the benefits and potential drawbacks of using it?
+48. Discuss the differences between the `equals()` and `==` operators in Java. When should you use one over the other for object comparison?
+49. Describe the concept of the ExecutorService in Java's `java.util.concurrent` package. How does it facilitate asynchronous execution and thread pooling?
+50. Explain the concept of the Java Memory Model's happens-before relationship. How does it ensure proper synchronization and ordering of memory operations?
+51. Discuss the differences between the `Comparable` and `Comparator` interfaces in Java. How are they used for object comparison and sorting?
+52. Describe the concept of the flyweight design pattern in Java. How can it be used to efficiently share immutable objects?
+53. Explain the concept of the `java.util.concurrent` package in Java. What are some commonly used classes for concurrent programming?
+54. Discuss the differences between the `static` and `instanceof` keywords in Java. When and how are they used?
+55. Describe the concept of the Observer design pattern in Java. How can it be used to establish a one-to-many dependency between objects?
+56. Explain the concept of the decorator design pattern in Java. How can it be used to add behavior dynamically to objects?
+57. Discuss the concept of lambda scoping in Java. What are effectively final variables and how are they accessed within lambda expressions?
+58. Describe the concept of method chaining in Java. How can it be used to create fluent APIs and improve code readability?
+59. Explain the concept of the `java.util.concurrent.locks` package in Java. How does it provide more flexibility compared to intrinsic locks?
+60. Discuss the differences between the `Stack` and `Queue` interfaces in Java. What are some commonly used implementations of these interfaces?
+61. Explain the concept of Classloaders in Java. How do they work and what are their different types? Provide examples of custom Classloader implementation.
+62. Discuss the concept of Java Security Manager. How does it provide a security framework for Java applications? What are the permissions and policy files used for?
+63. Explain the concept of Java Reflection API. How can you inspect and modify class structures, invoke methods, and access fields dynamically at runtime?
+64. Describe the concept of Java annotations processing. How can you create custom annotations and process them using annotation processors?
+65. Discuss the concept of Java Instrumentation API. How can you modify the bytecode of Java classes dynamically at runtime?
+66. Explain the concept of Java NIO (New I/O) and its advantages over traditional IO (Input/Output) in terms of performance and scalability.
+67. Discuss the concept of Java's CompletableFuture. How does it facilitate asynchronous programming and composition of asynchronous operations?
+68. Explain the concept of Java's Fork/Join framework. How can you leverage it to implement divide-and-conquer algorithms and achieve parallelism?
+69. Describe the concept of Java's Service Provider Interface (SPI). How can you use it to create pluggable and extensible applications?
+70. Discuss the concept of Java's MemoryMappedBuffer. How can you use it for efficient memory management and high-performance I/O operations?
+71. Explain the concept of Java's SecureRandom class. How does it generate cryptographically strong random numbers?
+72. Describe the concept of Java's Annotation Processor and Abstract Syntax Tree (AST) manipulation. How can you analyze and modify Java source code programmatically?
+73. Discuss the concept of Java's Concurrent Collections framework. How does it provide thread-safe collections for concurrent programming?
+74. Explain the concept of Java's PhantomReference and ReferenceQueue. How can you use them for efficient object cleanup and resource management?
+75. Discuss the concept of Java's CompletableFuture versus Java's Future. What are the differences and advantages of CompletableFuture over Future?
+
 # String
 1. Explain the difference between the `String`, `StringBuilder`, and `StringBuffer` classes in Java. When would you use each of them?
 2. How does Java handle string immutability? What are the benefits and drawbacks of having immutable strings?
