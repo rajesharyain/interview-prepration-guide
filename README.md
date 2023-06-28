@@ -1,19 +1,23 @@
 # Core Java
-1. Explain the concept of multithreading in Java. What are the advantages and disadvantages of using threads?
-2. Discuss the differences between `synchronized` methods and `synchronized` blocks in Java.
-3. What is the purpose of the `volatile` keyword in Java? How does it affect variable visibility and thread synchronization?
-4. Explain the concept of Java memory model and the role of the Java Virtual Machine (JVM) in managing memory.
-5. Discuss the differences between `String`, `StringBuffer`, and `StringBuilder` classes in Java. When would you choose one over the other?
-6. What is the purpose of the `transient` keyword in Java? How does it affect the serialization process?
-7. Explain the concept of exception handling in Java. What are checked and unchecked exceptions? How do you handle exceptions effectively?
-8. Describe the differences between shallow copy and deep copy in Java. How do you achieve deep copy for complex objects?
-9. Discuss the differences between `==` and `equals()` methods in Java. How do you properly implement the `equals()` method for custom classes?
-10. What are the different types of inner classes in Java? Explain their purposes and usage scenarios.
-11. Discuss the concept of reflection in Java. How do you use reflection to inspect and modify class behavior at runtime?
-12. Explain the principles of object serialization and deserialization in Java. What are the considerations for ensuring compatibility during serialization?
-13. Discuss the differences between abstract classes and interfaces in Java. When would you use each of them?
-14. Explain the concept of generics in Java. What are the benefits of using generics and how do you use them in your code?
-15. Describe the concept of annotations in Java. How do you create and use custom annotations in your code?
+| No. | Questions|
+|-----| --------|
+| 1. | Explain the concept of multithreading in Java. What are the advantages and disadvantages of using threads? |
+| 2. | Discuss the differences between `synchronized` methods and `synchronized` blocks in Java? |
+| 3. | What is the purpose of the `volatile` keyword in Java? How does it affect variable visibility and thread synchronization? |
+| 4. | Explain the concept of Java memory model and the role of the Java Virtual Machine (JVM) in managing memory? |
+| 5. | Discuss the differences between `String`, `StringBuffer`, and `StringBuilder` classes in Java. When would you choose one over the other? |
+| 6. | What is the purpose of the `transient` keyword in Java? How does it affect the serialization process? |
+| 7. | Explain the concept of exception handling in Java. What are checked and unchecked exceptions? How do you handle exceptions effectively? |
+| 8. | Describe the differences between shallow copy and deep copy in Java. How do you achieve deep copy for complex objects? |
+| 9. | Discuss the differences between `==` and `equals()` methods in Java. How do you properly implement the `equals()` method for custom classes? |
+| 10. | What are the different types of inner classes in Java? Explain their purposes and usage scenarios.? |
+| 11. | Discuss the concept of reflection in Java. How do you use reflection to inspect and modify class behavior at runtime? |
+| 12. | Explain the principles of object serialization and deserialization in Java. What are the considerations for ensuring compatibility during serialization? |
+| 13. | Discuss the differences between abstract classes and interfaces in Java. When would you use each of them? |
+| 14. | Explain the concept of generics in Java. What are the benefits of using generics and how do you use them in your code? |
+| 15. | Describe the concept of annotations in Java. How do you create and use custom annotations in your code? |
+
+---------------------------------------------------------------------------------------------
 
 # Advance Core Java
 Here are some tricky interview questions on Java for advanced-level experience:
@@ -290,5 +294,5 @@ Here are some tricky interview questions on Java for advanced-level experience:
 9. What is the purpose of the Spring framework's transaction management? Explain the different transaction management strategies supported by Spring.
 10. How can you integrate Spring with other technologies or frameworks, such as Hibernate, JPA, and JDBC?
 
-
-
+# Interview prepration questions link and sources
+1. https://www.geeksforgeeks.org/mastercard-interview-experience-for-java-backend-developer-2-years-experienced/
