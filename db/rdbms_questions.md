@@ -142,6 +142,167 @@ INNER JOIN employees B ON A.manager_id = B.id;
 14. **Describe the process of database normalization. What are the normal forms, and why are they important?**
 15. **Explain the concept of a deadlock. How can deadlocks be prevented in a database system?**
 
+#### Ans:
+### Transaction in a Database
+
+A transaction in a database is a sequence of one or more SQL operations treated as a single logical unit of work. Transactions ensure that database operations are executed reliably and adhere to the ACID properties (Atomicity, Consistency, Isolation, Durability).
+
+#### Example in PostgreSQL
+
+Here's an example of how to use transactions in PostgreSQL:
+
+```sql
+BEGIN;
+
+INSERT INTO accounts (id, balance) VALUES (1, 1000);
+UPDATE accounts SET balance = balance - 200 WHERE id = 1;
+UPDATE accounts SET balance = balance + 200 WHERE id = 2;
+
+COMMIT;
+```
+
+If any of the SQL operations fail, you can roll back the transaction to its initial state:
+
+```sql
+BEGIN;
+
+INSERT INTO accounts (id, balance) VALUES (1, 1000);
+UPDATE accounts SET balance = balance - 200 WHERE id = 1;
+UPDATE accounts SET balance = balance + 200 WHERE id = 2;
+
+ROLLBACK;  -- Roll back all changes
+```
+
+### Isolation Levels in a Transaction
+
+Isolation levels define the degree to which the operations in one transaction are isolated from those in other concurrent transactions. PostgreSQL supports the following isolation levels:
+
+1. **Read Uncommitted**:
+   - **Description**: Transactions can read data modified by other uncommitted transactions.
+   - **Usage**: Not typically used as PostgreSQL does not implement this level.
+
+2. **Read Committed** (Default in PostgreSQL):
+   - **Description**: A transaction sees only data committed before it began. It does not see uncommitted data or changes committed by concurrent transactions after it started.
+   - **Usage**: Suitable for most applications.
+
+3. **Repeatable Read**:
+   - **Description**: Ensures that if a transaction reads a row, it will see the same data for the duration of the transaction. It prevents non-repeatable reads but not phantom reads.
+   - **Usage**: Useful when consistent reads are necessary within a transaction.
+
+4. **Serializable**:
+   - **Description**: The highest isolation level. Transactions are executed in such a way that they appear to be serialized. It prevents dirty reads, non-repeatable reads, and phantom reads.
+   - **Usage**: Ensures complete isolation but can lead to reduced concurrency.
+
+### Materialized Views vs. Regular Views in PostgreSQL
+
+- **Regular Views**:
+  - **Definition**: A virtual table representing the result of a query. It does not store data physically.
+  - **Usage**: Provides a simplified interface for complex queries. Data is fetched from the underlying tables each time the view is queried.
+  - **Example**:
+    ```sql
+    CREATE VIEW view_name AS
+    SELECT column1, column2
+    FROM table_name
+    WHERE condition;
+    ```
+
+- **Materialized Views**:
+  - **Definition**: A view that stores the result of the query physically. It needs to be refreshed to reflect changes in the underlying tables.
+  - **Usage**: Improves performance for expensive queries that do not need to be run in real-time.
+  - **Example**:
+    ```sql
+    CREATE MATERIALIZED VIEW mat_view_name AS
+    SELECT column1, column2
+    FROM table_name
+    WHERE condition;
+
+    -- To refresh the materialized view
+    REFRESH MATERIALIZED VIEW mat_view_name;
+    ```
+
+### Database Normalization
+
+Database normalization is the process of organizing the fields and tables of a relational database to minimize redundancy and dependency. The main goal is to ensure data integrity and reduce data anomalies.
+
+#### Normal Forms
+
+1. **First Normal Form (1NF)**:
+   - **Description**: Ensures that each column contains atomic (indivisible) values, and each value is stored in a separate cell.
+   - **Example**: No repeating groups or arrays in columns.
+
+2. **Second Normal Form (2NF)**:
+   - **Description**: Achieves 1NF and ensures that all non-key attributes are fully functionally dependent on the primary key.
+   - **Example**: Removes partial dependencies on the primary key.
+
+3. **Third Normal Form (3NF)**:
+   - **Description**: Achieves 2NF and ensures that all non-key attributes are not transitively dependent on the primary key.
+   - **Example**: Removes transitive dependencies.
+
+4. **Boyce-Codd Normal Form (BCNF)**:
+   - **Description**: A stricter version of 3NF where every determinant is a candidate key.
+   - **Example**: Ensures no redundancy based on functional dependencies.
+
+5. **Fourth Normal Form (4NF)**:
+   - **Description**: Achieves BCNF and ensures no multi-valued dependencies.
+   - **Example**: Eliminates independent multi-valued facts from the same table.
+
+6. **Fifth Normal Form (5NF)**:
+   - **Description**: Achieves 4NF and ensures no join dependencies.
+   - **Example**: Ensures lossless join decomposition.
+
+#### Importance
+
+- **Data Integrity**: Ensures accurate and consistent data.
+- **Reduced Redundancy**: Minimizes duplication of data.
+- **Efficiency**: Improves query performance and storage efficiency.
+
+### Concept of a Deadlock
+
+A deadlock occurs when two or more transactions are waiting indefinitely for each other to release locks. This can halt the progress of all involved transactions.
+
+#### Example
+
+Transaction 1 locks row A and waits for row B, while Transaction 2 locks row B and waits for row A. Neither can proceed because they are waiting on each other.
+
+#### Preventing Deadlocks
+
+1. **Timeouts**: Set timeouts for transactions to avoid waiting indefinitely.
+   ```sql
+   SET statement_timeout = '2s';  -- Sets a 2-second timeout for statements
+   ```
+
+2. **Deadlock Detection**: PostgreSQL automatically detects deadlocks and aborts one of the transactions.
+   ```sql
+   SET deadlock_timeout = '1s';  -- Sets a 1-second deadlock detection interval
+   ```
+
+3. **Lock Ordering**: Ensure transactions acquire locks in a consistent order.
+   ```sql
+   BEGIN;
+
+   -- Acquire locks in a consistent order
+   LOCK TABLE table1 IN ACCESS EXCLUSIVE MODE;
+   LOCK TABLE table2 IN ACCESS EXCLUSIVE MODE;
+
+   COMMIT;
+   ```
+
+4. **Minimize Lock Scope**: Reduce the duration and scope of locks held by transactions.
+   ```sql
+   BEGIN;
+
+   -- Perform operations that require locks
+   UPDATE table1 SET column = value WHERE condition;
+   
+   COMMIT;
+   ```
+
+5. **Indexing**: Use appropriate indexing to minimize lock contention.
+   ```sql
+   CREATE INDEX index_name ON table_name (column_name);
+   ```
+-----------------------------------------------------------------------------------------------------------------
+
 ### ACID Properties
 16. **What is atomicity in the context of a database transaction? Provide an example.**
 17. **Explain consistency as one of the ACID properties. How does PostgreSQL ensure consistency?**
