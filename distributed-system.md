@@ -34,6 +34,56 @@ There are two main use cases of encryption, known as encryption in transit and e
 ## GFS/HDFS () Google File System/ Hadoop Distributed File System
 
 <img width="2046" height="1298" alt="image" src="https://github.com/user-attachments/assets/6498342b-9ed1-4a9c-8e0d-4087b1c575f6" />
+# 📄 File Storage Flow in a Distributed File System
 
+When you store a file like `sample.pdf` in a distributed file system, here's how the process typically works:
+
+---
+
+### 1. Chunking the File
+- The client library takes the file data and splits it into **fixed-size chunks**.
+- Each chunk is assigned an **index** based on its position in the file.
+  - Example: `chunk 0` for the first part, `chunk 1` for the second, etc.
+
+---
+
+### 2. Contacting the Manager Node
+- The client contacts the **manager node** (or master) to:
+  - Get **chunk handles**.
+  - Retrieve the **locations of chunk servers** responsible for storing each chunk.
+
+---
+
+### 3. Distributing Chunks to Servers
+- The client pushes each chunk’s data to the chunk servers.
+- Typically uses **chain replication** to efficiently distribute data to all replicas.
+
+---
+
+### 4. Lease Assignment for Mutations
+- The manager grants a **lease** to one chunk server per chunk.
+- This chunk server acts as the **primary replica** and serializes write operations.
+
+---
+
+### 5. Reading the File
+When the client wants to **read** `sample.pdf`:
+- It uses the filename to ask the manager for:
+  - The chunk handles.
+  - The locations of the corresponding chunk servers.
+
+---
+
+### 6. Retrieving Chunks in Order
+- The client requests each chunk from the closest chunk servers.
+- It retrieves chunks **in order** starting from `chunk 0`, based on their **byte offsets**.
+
+---
+
+### 7. Reconstructing the File
+- The client library **reassembles the chunks** sequentially.
+- Reconstructs the **complete file content** for the application.
+
+> This entire process **abstracts away** the chunking from the application, which simply works with the file as a **continuous byte stream**.
 
 
