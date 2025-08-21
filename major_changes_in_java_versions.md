@@ -1,3 +1,21 @@
+# Summary:
+Java 8 was a watershed—introducing lambdas, streams, and modern date-time APIs. Java 11 brought a standard HttpClient and modernized GC with ZGC. Java 17 LTS added sealed classes, switch pattern matching, and Foreign-Memory APIs. Java 21 LTS embraced virtual threads and structured concurrency for simpler multithreading. Java 23, although non-LTS, further improves productivity with features like Markdown JavaDoc, flexible constructors, primitive pattern matching, and the class-file API.”
+
+##
+| Version | Release (LTS?) | Key Features                                                                |
+| ------- | -------------- | --------------------------------------------------------------------------- |
+| **8**   | 2014 (LTS)     | Lambdas, Streams, Default methods, `java.time`                              |
+| **11**  | 2018 (LTS)     | HttpClient, ZGC, removal of Applets, JavaFX, improved TLS, PKCS11 updates   |
+| **14**  | 2020 (Non-LTS) | Records (preview), pattern-match `instanceof`, text blocks                  |
+| **17**  | 2021 (LTS)     | Sealed classes, switch pattern matching, Vector & Foreign APIs, performance |
+| **21**  | 2023 (LTS)     | Virtual threads, structured concurrency, scoped values, unnamed classes     |
+| **23**  | 2024 (Non-LTS) | Doc improvements, primitive patterns, flexible constructors, class-file API |
+
+
+
+
+
+
 ### Major Changes from Java 8 to Java 17
 
 #### Java 9
