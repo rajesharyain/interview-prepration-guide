@@ -23,17 +23,17 @@ According to the initial statement of the CAP theorem, it is impossible for a di
 The CAP theorem states that a distributed data system can only guarantee two out of three properties simultaneously: Consistency, Availability, and Partition tolerance. Given that network partitions (failures) are inevitable in distributed systems, designers must choose to prioritize either Consistency (all nodes see the same data at the same time) or Availability (every request gets a response) when a partition occurs.
  
 ### The Three Properties
-# Consistency (C):
+#### Consistency (C):
 Every read operation receives the most recent write or an error, ensuring all nodes in the system have the same, up-to-date data at any given moment. 
-# Availability (A):
+#### Availability (A):
 Every request to the system receives a response, even if some nodes are down, though the response might not always be the most recent data. 
-# Partition Tolerance (P):
+#### Partition Tolerance (P):
 The system continues to operate and function despite network failures, such as dropped or slow network connections between nodes. 
 
 ### The Trade-off
-# Partition tolerance is a must:
+#### Partition tolerance is a must:
 Since network failures are inevitable in distributed systems, Partition Tolerance (P) is a requirement, not a choice, for any reliable system. 
-# Choose between C and A:
+#### Choose between C and A:
 - In the event of a network partition, the system must make a choice:
 CP Systems (Consistency + Partition Tolerance): These systems will stop serving requests for a particular piece of data to ensure data consistency. If a new write is in transit and a partition occurs, the system will wait to ensure consistency across all nodes, thereby sacrificing availability. 
 AP Systems (Availability + Partition Tolerance): These systems will continue to respond to requests, even if there's a risk of data inconsistency. During a partition, a node might return a stale version of the data because the most recent update hasn't been synchronized across all nodes.
