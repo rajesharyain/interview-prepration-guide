@@ -8,6 +8,114 @@ Key points:
 * **Explicit locking**: Unlike `synchronized` blocks, you manually call `lock()` and `unlock()`. This gives you more control, e.g., try-locking or interruptible locks.
 * **Ownership**: Only the thread that acquired the lock can release it. If another thread tries to unlock it, Java throws `IllegalMonitorStateException`.
 
+
+
+
+## **1. Key concept of ReentrantLock**
+
+* A **ReentrantLock** allows **the same thread** to acquire the lock multiple times without deadlocking itself.
+* **Ownership matters**: Only the thread that acquired the lock can release it.
+* **Lock count**: Every time a thread locks, an internal counter increases. Unlocking decreases it. The lock is fully released only when the counter reaches zero.
+
+---
+
+## **2. Use Case Example: Bank Account Transfers**
+
+Imagine we have a **BankAccount** class with `deposit()` and `transfer()` methods. Multiple threads may try to transfer money simultaneously.
+
+```java
+import java.util.concurrent.locks.ReentrantLock;
+
+class BankAccount {
+    private int balance;
+    private ReentrantLock lock = new ReentrantLock();
+
+    public BankAccount(int balance) {
+        this.balance = balance;
+    }
+
+    public void deposit(int amount) {
+        lock.lock();
+        try {
+            balance += amount;
+            System.out.println(Thread.currentThread().getName() + " deposited: " + amount);
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    public void transfer(BankAccount to, int amount) {
+        lock.lock();  // acquire lock for this account
+        try {
+            System.out.println(Thread.currentThread().getName() + " transferring: " + amount);
+            deposit(-amount);  // re-enters lock safely
+            to.deposit(amount); // lock in another account separately
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+}
+```
+
+---
+
+### **3. How it works with multiple threads**
+
+1. **Thread A** wants to transfer \$100 from Account1 to Account2.
+
+   * It calls `transfer()`.
+   * Thread A acquires `lock` on Account1.
+
+2. Inside `transfer()`, it calls `deposit(-amount)`.
+
+   * Since `deposit()` also locks the **same ReentrantLock**, Thread A can **re-enter the lock** because it’s the same thread.
+   * Lock counter increases by 1.
+
+3. Thread A finishes `deposit()` inside `transfer()`.
+
+   * Unlock decreases counter by 1.
+   * Thread A still holds the lock for `transfer()`.
+
+4. After finishing `transfer()`, unlock decreases counter to 0.
+
+   * Now the lock is fully released, and **other threads can acquire it**.
+
+5. **Thread B** trying to access Account1 must **wait** until Thread A fully releases the lock.
+
+---
+
+### **4. Key Points from This Example**
+
+* **Reentrancy** prevents deadlock when the same thread calls multiple methods that lock the same object.
+* **Other threads must wait** until the lock is fully released.
+* You can lock/unlock in **different methods**, as long as the **same thread** performs the unlocking.
+* Unlocking from a **different thread** will throw `IllegalMonitorStateException`.
+
+---
+
+### **5. Output Example (Conceptual)**
+
+```
+Thread-1 transferring: 100
+Thread-1 deposited: -100
+Thread-1 deposited: 100
+Thread-2 deposited: 50  <-- runs only after Thread-1 fully releases the lock
+```
+
+Here you see **Thread-2 waits** until Thread-1 completely unlocks.
+
+---
+
+In short:
+
+> ReentrantLock allows a thread to “re-enter” safely while other threads **cannot access the locked resource** until it is fully released. It’s perfect for nested method calls and complex workflows where multiple methods share the same critical section.
+
+---
+
 ---
 
 ### 2. Why it’s “just like a mutex”
