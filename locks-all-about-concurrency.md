@@ -285,5 +285,14 @@ In short:
 * **Optimistic** = “I’ll go ahead and hope nobody else changes it; if they do, I’ll handle it.”
 
 ---
+# SUMMARY
 
+| Lock Type           | Java Example             | Key Feature                             |
+| ------------------- | ------------------------ | --------------------------------------- |
+| Implicit / Monitor  | `synchronized`           | Auto-lock/unlock, simple                |
+| Explicit Lock       | `ReentrantLock`          | Manual lock/unlock, reentrant, flexible |
+| Traditional / Mutex | `pthread_mutex_t`        | Low-level, one owner thread             |
+| Read-Write Lock     | `ReentrantReadWriteLock` | Multiple readers, exclusive writer      |
+| Spinlock            | Custom / low-level       | Busy-wait, avoids context switch        |
+| Semaphore           | `Semaphore`              | Allows N threads, counting lock         |
 
