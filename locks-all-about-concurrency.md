@@ -294,5 +294,5 @@ In short:
 | Traditional / Mutex | `pthread_mutex_t`        | Low-level, one owner thread             |
 | Read-Write Lock     | `ReentrantReadWriteLock` | Multiple readers, exclusive writer      |
 | Spinlock            | Custom / low-level       | Busy-wait, avoids context switch        |
-| Semaphore           | `Semaphore`              | Allows N threads, counting lock         |
+| Semaphore           | `Semaphore`              | Allows N threads, counting lock , Example db ppol        |
 
