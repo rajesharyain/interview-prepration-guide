@@ -66,7 +66,7 @@ String result = opt.orElseGet(() -> "default");
 #### 11. What’s the difference between `orElse()` and `orElseGet()`?
 
 **Answer**: `orElse()` always evaluates its argument, even if the value is present. `orElseGet()` evaluates its supplier only if the value is absent.
-
+orElse() — always evaluates its argument and orElseGet(), even the optional has the value in it v/s evaluates only if needed when the optional does not have the value
 #### 12. How do you throw an exception if a value is absent?
 
 **Answer**:
